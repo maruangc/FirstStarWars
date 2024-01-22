@@ -1,3 +1,61 @@
 /* 
     General Styles
 */
+.carrusel {
+  width: 350px;
+  height: 500px;
+}
+
+.imgCharacters {
+  width: 350px !important;
+  height: 420px !important;
+}
+
+.imgPlanets {
+  width: 350px !important;
+  height: 350px !important;
+  margin-top: 35px;
+}
+
+.imgStarShips {
+  width: 350px !important;
+  height: 270px !important;
+  margin-top: 70px;
+}
+
+.cuerpo {
+  background-color: black;
+  /* background: url(https://wallpapercave.com/wp/l9VYv1D.jpg); */
+  background: url(https://cdn.wallpapersafari.com/6/76/p1PnTJ.png);
+}
+
+.subrayado {
+  text-decoration: none;
+  background-color: rgba(19, 9, 1, 0.096);
+}
+
+.subrayado:hover {
+  color: blue !important;
+}
+
+.subrayado:active {
+  color: white !important;
+}
+
+.boton {
+  background-color: rgba(19, 9, 1, 0.096);
+  margin-right: 1vh;
+  border: none;
+  color: white;
+  padding: 0;
+  font-size: 3vh;
+  cursor: pointer;
+}
+
+.boton:hover {
+  color: red;
+}
+
+.boton:active {
+  color: white;
+}

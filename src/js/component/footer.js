@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
-	</footer>
+  <footer className="footer mt-auto py-3 text-center">
+    <p className="text-secondary">
+      Star Wars and all associated names and/or images are copyright Lucasfilm
+      Ltd. Images were freely collected from starwars-visualguide.com
+    </p>
+  </footer>
 );
