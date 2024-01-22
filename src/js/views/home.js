@@ -26,13 +26,6 @@ export const Home = () => {
       arrayTemp = store.starShips;
       urlDefault = store.starShipsUrl;
     }
-    console.log(
-      "Valores a procesar: ",
-      idxTemp,
-      arrayTemp,
-      urlDefault,
-      wichItem
-    );
     let urlToSend = "";
     if (controlType == 0) {
       urlToSend = arrayTemp[idxTemp][0].previous
@@ -45,7 +38,6 @@ export const Home = () => {
         : urlDefault;
       idxTemp = arrayTemp[idxTemp][0].next ? idxTemp + 1 : idxTemp;
     }
-    console.log("Enviando", wichItem, idxTemp, urlToSend);
     if (wichItem == "Characters") {
       actions.getPeoples(idxTemp, urlToSend);
     }
@@ -53,7 +45,7 @@ export const Home = () => {
       actions.getPlanets(idxTemp, urlToSend);
     }
     if (wichItem == "starShips") {
-      actions.getStarShips(idxTemp, urlToSend);
+      actions.getStarShips(idxTemp, urlToSend, arrayTemp, wichItem);
     }
   };
 

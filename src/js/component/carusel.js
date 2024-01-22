@@ -7,9 +7,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Carousel from "react-bootstrap/Carousel";
+import { useNavigate } from "react-router-dom";
 
 function CaruselPersonajes({ elements, idx, wichItem }) {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
 
   return (
     <Carousel fade className="carrusel mx-auto rounded-2">
@@ -32,10 +34,10 @@ function CaruselPersonajes({ elements, idx, wichItem }) {
                   item.uid +
                   ".jpg"
                 }
-                text={item.character.name}
+                // text={item.character.name}
               />
               <Carousel.Caption className="d-flex justify-content-evenly">
-                <Link to="/" className="subrayado">
+                <Link to={`/${wichItem}/${item.uid}`} className="subrayado">
                   <h5 className="text-light subrayado">
                     {item.character.name}
                   </h5>
