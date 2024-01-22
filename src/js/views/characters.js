@@ -8,7 +8,7 @@ export const Characters = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
   console.log(params);
-  // const items = store.array.find((item) => item.id == params.id);
+  // const items = store.array.find((item) => item.uid == params.uid);
 
-  return <div>{params}</div>;
+  return <div>{params.uid}</div>;
 };
