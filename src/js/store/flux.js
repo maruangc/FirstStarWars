@@ -14,6 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       swSpinnerPlanets: 0,
       swSpinnerShips: 0,
       favorites: [],
+      article: {},
     },
     actions: {
       getPeoples: async (i, url) => {
@@ -124,6 +125,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
         const a = store.favorites.filter((item) => item != e);
         setStore({ favorites: a });
+      },
+      getArticle: async (url) => {
+        const store = getStore();
+        const response = await fetch(url);
+        const data = await response.json();
+        setStore({
+          article: {
+            character: data.result.properties,
+            uid: data.result.uid,
+          },
+        });
       },
     },
   };

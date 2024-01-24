@@ -6,17 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-export const Characters = () => {
+export const Planets = () => {
   const params = useParams();
   const { store, actions } = useContext(Context);
-  const array = store.peoples[store.idxPeoples][1];
+  const array = store.planets[store.idxPlanets][1];
   const element = array[params.index];
-
-  useEffect(() => {
-    actions.getArticle(element.character.homeworld);
-  }, []);
-
-  console.log("homeworld: ", store.article);
 
   return (
     <div className="d-flex container justify-content-center">
@@ -24,10 +18,14 @@ export const Characters = () => {
         <img
           className="card-img-top"
           src={
-            "https:/starwars-visualguide.com/assets/img/characters/" +
+            "https:/starwars-visualguide.com/assets/img/planets/" +
             element.uid +
             ".jpg"
           }
+          onError={({ currentTarget }) => {
+            currentTarget.src =
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsSVurYkmkVu0tGuwXevYebFUU-R16RJ1Lrp6MapsEDw&s";
+          }}
         ></img>
         <div className="card-body d-flex">
           <Link to="/">
@@ -47,25 +45,28 @@ export const Characters = () => {
       <div>
         <ul className="list-group list-group-flush bg-black">
           <li className="text-light list-group-item bg-dark">
-            Gender : {element.character.gender}
+            Diameter : {element.character.diameter}
           </li>
           <li className="text-light list-group-item bg-dark">
-            Birth year: {element.character.birth_year}
+            Gravity : {element.character.gravity}
           </li>
           <li className="text-light list-group-item bg-dark">
-            Eye Color : {element.character.eye_color}
+            Orbital period : {element.character.orbital_period}
           </li>
           <li className="text-light list-group-item bg-dark">
-            Hair color: {element.character.hair_color}
+            Rotation period: {element.character.rotation_period}
           </li>
           <li className="text-light list-group-item bg-dark">
-            Skin Color: {element.character.skin_color}
+            Climate: {element.character.climate}
           </li>
           <li className="text-light list-group-item bg-dark">
-            Height : {element.character.height}
+            Terrain: {element.character.terrain}
           </li>
           <li className="text-light list-group-item bg-dark">
-            Mass : {element.character.mass}
+            Surface water: {element.character.surface_water}
+          </li>
+          <li className="text-light list-group-item bg-dark">
+            Population: {element.character.population}
           </li>
         </ul>
       </div>

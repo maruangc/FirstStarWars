@@ -16,7 +16,7 @@ function CaruselPersonajes({ elements, idx, wichItem }) {
   return (
     <Carousel fade className="carrusel mx-auto rounded-2">
       {elements.length > 0 &&
-        elements[idx][1].map((item) => {
+        elements[idx][1].map((item, index) => {
           return (
             <Carousel.Item className="carrusel rounded-2" key={item.uid}>
               <img
@@ -37,7 +37,7 @@ function CaruselPersonajes({ elements, idx, wichItem }) {
                 // text={item.character.name}
               />
               <Carousel.Caption className="d-flex justify-content-evenly">
-                <Link to={`/${wichItem}/${item.uid}`} className="subrayado">
+                <Link to={`/${wichItem}/${index}`} className="subrayado">
                   <h5 className="text-light subrayado">
                     {item.character.name}
                   </h5>

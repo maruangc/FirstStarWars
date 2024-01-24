@@ -25,8 +25,10 @@
 
 .cuerpo {
   background-color: black;
-  /* background: url(https://wallpapercave.com/wp/l9VYv1D.jpg); */
-  background: url(https://cdn.wallpapersafari.com/6/76/p1PnTJ.png);
+  /* background: url(https://cdn.wallpapersafari.com/6/76/p1PnTJ.png); */
+  background: url(https://images.squarespace-cdn.com/content/v1/63ebb3f0b6f2ce5e1dd03634/0c678052-fb60-460f-a9ed-b13d7b703793/wep+website+assets-01.png?format=1000w);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
 }
 
 .subrayado {
