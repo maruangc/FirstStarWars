@@ -13,8 +13,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       swSpinnerCharacters: 0,
       swSpinnerPlanets: 0,
       swSpinnerShips: 0,
+      swOrigin: 0,
       favorites: [],
       article: {},
+      planet: {},
+      ship: {},
+      whileArticle: 0,
+      pilots: [],
     },
     actions: {
       getPeoples: async (i, url) => {
@@ -127,6 +132,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ favorites: a });
       },
       getArticle: async (url) => {
+        setStore({ article: {} });
+        setStore({ whileArticle: 1 });
         const store = getStore();
         const response = await fetch(url);
         const data = await response.json();
@@ -136,6 +143,36 @@ const getState = ({ getStore, getActions, setStore }) => {
             uid: data.result.uid,
           },
         });
+        setStore({ whileArticle: 0 });
+      },
+      originValue: (valueOrigin) => {
+        setStore({ swOrigin: valueOrigin });
+      },
+      planetValue: (valuePlanet) => {
+        setStore({ planet: valuePlanet });
+      },
+      shipValue: (valueShip) => {
+        setStore({ ship: valueShip });
+      },
+      getPilots: async (thePilots) => {
+        setStore({ pilots: [] });
+        setStore({ whileArticle: 1 });
+        const store = getStore();
+        let response;
+        let data;
+        let newArray = [];
+        for (let value of thePilots) {
+          response = await fetch(value);
+          data = await response.json();
+          newArray.push({
+            character: data.result.properties,
+            uid: data.result.uid,
+          });
+        }
+        setStore({
+          pilots: newArray,
+        });
+        setStore({ whileArticle: 0 });
       },
     },
   };

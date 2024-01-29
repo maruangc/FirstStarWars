@@ -32,7 +32,7 @@ export const Navbar = () => {
                 {store.favorites.length > 0 &&
                   store.favorites.map((item) => {
                     return (
-                      <div className="d-flex mb-1">
+                      <div key={item} className="d-flex mb-1">
                         <Dropdown.Item>{item}</Dropdown.Item>
                         <button
                           onClick={() => actions.removeFromFavorites(item)}

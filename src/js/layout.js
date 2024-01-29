@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import injectContext from "./store/appContext";
 import { Characters } from "./views/characters";
 import { Planets } from "./views/planets";
+import { StarShips } from "./views/starships";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -25,6 +26,7 @@ const Layout = () => {
             <Route path="/" element={<Home />} />
             <Route path="/characters/:index" element={<Characters />} />
             <Route path="/planets/:index" element={<Planets />} />
+            <Route path="/starships/:index" element={<StarShips />} />
             <Route
               path="*"
               element={<h1 className="text-light">Not found!</h1>}

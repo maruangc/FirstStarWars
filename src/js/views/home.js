@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,6 +6,10 @@ import CaruselPersonajes from "../component/carusel";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.originValue(0);
+  }, []);
 
   const controlIndex = (controlType, wichItem) => {
     let idxTemp = 0;
@@ -75,7 +79,7 @@ export const Home = () => {
             </>
           ) : (
             <div className="spinner-border text-secondary mb-3" role="status">
-              <span className="visually-hidden">Loading...</span>
+              <span className="visually-hidden text-lght">Loading...</span>
             </div>
           )}
         </div>

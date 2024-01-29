@@ -34,7 +34,11 @@ function CaruselPersonajes({ elements, idx, wichItem }) {
                   item.uid +
                   ".jpg"
                 }
-                // text={item.character.name}
+                onError={({ currentTarget }) => {
+                  currentTarget.src =
+                    "https://pablogonzalezblasco.com.br/wp-content/uploads/sites/5/2020/03/star-wars-1-capa-862x582.jpg";
+                  // "https://www.enseignes-lumineuse.com/images/big/Star-Wars-Enseigne-Neon-87.jpg";
+                }}
               />
               <Carousel.Caption className="d-flex justify-content-evenly">
                 <Link to={`/${wichItem}/${index}`} className="subrayado">
