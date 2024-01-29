@@ -29,7 +29,7 @@ export const Planets = () => {
               <img
                 className="card-img-top imgViewPlanets"
                 src={
-                  "https:/starwars-visualguide.com/assets/img/planets/" +
+                  "https://starwars-visualguide.com/assets/img/planets/" +
                   store.planet.uid +
                   ".jpg"
                 }

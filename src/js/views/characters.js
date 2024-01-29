@@ -26,7 +26,7 @@ export const Characters = () => {
             <img
               className="card-img-top"
               src={
-                "https:/starwars-visualguide.com/assets/img/characters/" +
+                "https://starwars-visualguide.com/assets/img/characters/" +
                 element.uid +
                 ".jpg"
               }

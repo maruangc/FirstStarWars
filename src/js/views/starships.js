@@ -35,7 +35,7 @@ export const StarShips = () => {
                 <img
                   className="card-img-top imgViewPlanets"
                   src={
-                    "https:/starwars-visualguide.com/assets/img/starships/" +
+                    "https://starwars-visualguide.com/assets/img/starships/" +
                     store.ship.uid +
                     ".jpg"
                   }
